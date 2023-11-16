@@ -1,0 +1,119 @@
+{
+    "customers": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+1-555-123-4567",
+        "address": {
+          "street": "123 Main St",
+          "city": "Anytown",
+          "state": "CA",
+          "zip": "12345",
+          "country": "USA"
+        },
+        "notes": "This customer is interested in our premium subscription package."
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "phone": "+1-555-987-6543",
+        "address": {
+          "street": "456 Elm St",
+          "city": "Othertown",
+          "state": "NY",
+          "zip": "67890",
+          "country": "USA"
+        },
+        "notes": "This customer has a complaint about our service."
+      }
+    ],
+    "leads": [
+      {
+        "id": 1,
+        "name": "Bob Johnson",
+        "email": "bob.johnson@example.com",
+        "phone": "+1-555-555-1234",
+        "notes": "This lead has expressed interest in our product but has not yet made a purchase."
+      },
+      {
+        "id": 2,
+        "name": "Alice Brown",
+        "email": "alice.brown@example.com",
+        "phone": "+1-555-555-5678",
+        "notes": "This lead has submitted a contact form on our website."
+      }
+    ],
+    "companies": [
+      {
+        "id": 1,
+        "name": "Acme Inc.",
+        "email": "info@acme.com",
+        "phone": "+1-555-111-2222",
+        "address": {
+          "street": "789 Oak St",
+          "city": "Sometown",
+          "state": "CA",
+          "zip": "54321",
+          "country": "USA"
+        },
+        "notes": "This company is a potential customer."
+      },
+      {
+        "id": 2,
+        "name": "Beta Corp.",
+        "email": "info@beta.com",
+        "phone": "+1-555-333-4444",
+        "address": {
+          "street": "321 Pine St",
+          "city": "Anothertown",
+          "state": "NY",
+          "zip": "09876",
+          "country": "USA"
+        },
+        "notes": "This company is a current customer."
+      }
+    ],
+    "opportunities": [
+      {
+        "id": 1,
+        "name": "Premium Subscription Package",
+        "description": "A premium package that includes additional features and support.",
+        "amount": 1000,
+        "probability": 0.4,
+        "status": "open",
+        "customer_id": 1
+      },
+      {
+        "id": 2,
+        "name": "Enterprise Plan",
+        "description": "A plan for large businesses with custom requirements.",
+        "amount": 5000,
+        "probability": 0.2,
+        "status": "won",
+        "customer_id": 2
+      }
+    ],
+    "activities": [
+      {
+        "id": 1,
+        "type": "call",
+        "subject": "Follow-up call with John Doe",
+        "description": "Call to discuss the premium subscription package.",
+        "start_time": "2021-10-01T09:00:00",
+        "end_time": "2021-10-01T09:30:00",
+        "customer_id": 1
+      },
+      {
+        "id": 2,
+        "type": "email",
+        "subject": "Follow-up email with Jane Smith",
+        "description": "Email to address the complaint about our service.",
+        "start_time": "2021-10-02T10:00:00",
+        "end_time": "2021-10-02T10:15:00",
+        "customer_id": 2
+      }
+    ]
+  }
+  

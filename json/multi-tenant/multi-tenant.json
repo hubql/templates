@@ -1,0 +1,91 @@
+{
+    "tenants": [
+      {
+        "id": "tenant1",
+        "name": "Tenant One",
+        "metadata": {
+          "created_at": "2021-05-01",
+          "created_by": "admin",
+          "updated_at": "2021-05-10",
+          "updated_by": "admin"
+        },
+        "users": [
+          {
+            "id": "user1",
+            "name": "John Doe",
+            "email": "johndoe@example.com",
+            "role": "admin",
+            "permissions": ["read", "write", "delete"]
+          },
+          {
+            "id": "user2",
+            "name": "Jane Doe",
+            "email": "janedoe@example.com",
+            "role": "user",
+            "permissions": ["read"]
+          }
+        ],
+        "data_segregation": {
+          "tenant_specific_data": {
+            "orders": [
+              {
+                "id": "order1",
+                "customer_id": "customer1",
+                "items": [
+                  {
+                    "product_id": "product1",
+                    "quantity": 2
+                  },
+                  {
+                    "product_id": "product2",
+                    "quantity": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "shared_data": {
+            "products": [
+              {
+                "id": "product1",
+                "name": "Product One",
+                "price": 10.99
+              },
+              {
+                "id": "product2",
+                "name": "Product Two",
+                "price": 19.99
+              }
+            ]
+          },
+          "global_data": {
+            "settings": {
+              "currency": "USD",
+              "language": "en"
+            }
+          }
+        },
+        "customizations": {
+          "branding": {
+            "logo": "<https://example.com/logo.png>",
+            "color": "#123456"
+          },
+          "themes": {
+            "default": {
+              "background_color": "#FFFFFF",
+              "font_color": "#000000"
+            },
+            "dark": {
+              "background_color": "#000000",
+              "font_color": "#FFFFFF"
+            }
+          },
+          "configurations": {
+            "feature1_enabled": true,
+            "feature2_enabled": false
+          }
+        }
+      }
+    ]
+  }
+  

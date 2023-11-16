@@ -1,0 +1,13 @@
+type User {
+  id: ID!
+}
+
+type Query {
+  me: User!
+}
+
+type Mutation {
+  createUser: User!
+  updateUser: User!
+  deleteUser: User!
+}

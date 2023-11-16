@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+// Define the message for a blog post
+message Blog {
+  // Unique identifier for the blog post
+  string id = 1;
+
+  // Title of the blog post
+  string title = 2;
+
+  // Content of the blog post
+  string content = 3;
+
+  // Author of the blog post
+  string author = 4;
+
+  // Timestamp when the blog post was created
+  google.protobuf.Timestamp created_at = 5;
+
+  // List of comments associated with the blog post
+  repeated Comment comments = 6;
+}
+
+// Define the message for a comment
+message Comment {
+  // Unique identifier for the comment
+  string id = 1;
+
+  // Text content of the comment
+  string text = 2;
+
+  // Author of the comment
+  string author = 3;
+
+  // Timestamp when the comment was posted
+  google.protobuf.Timestamp posted_at = 4;
+}

@@ -1,0 +1,57 @@
+{
+    "order_id": "987654321",
+    "customer_info": {
+      "name": "Jane Doe",
+      "email": "janedoe@example.com",
+      "phone_number": "+1 987 654 3210",
+      "address": {
+        "street": "123 Main St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip_code": "94105"
+      }
+    },
+    "order_items": [
+      {
+        "item_id": "product_1",
+        "item_name": "Product 1",
+        "item_quantity": 3,
+        "item_price": 50.0,
+        "item_options": [
+          {
+            "color": "red",
+            "size": "L"
+          },
+          {
+            "color": "blue",
+            "size": "M"
+          }
+        ]
+      },
+      {
+        "item_id": "product_2",
+        "item_name": "Product 2",
+        "item_quantity": 1,
+        "item_price": 75.0,
+        "item_options": [
+          {
+            "color": "green",
+            "size": "S"
+          }
+        ]
+      }
+    ],
+    "order_total": 375.0,
+    "order_status": "pending",
+    "order_date": "2022-12-24T12:00:00Z",
+    "payment_info": {
+      "payment_method": "credit_card",
+      "card_info": {
+        "card_number": "1234 5678 9012 3456",
+        "card_holder_name": "Jane Doe",
+        "expiration_date": "12/24",
+        "security_code": "123"
+      }
+    }
+  }
+  
