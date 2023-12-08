@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<customers>
+		<id>1</id>
+		<name>John Doe</name>
+		<email>john.doe@example.com</email>
+		<phone>+1-555-123-4567</phone>
+		<address>
+			<street>123 Main St</street>
+			<city>Anytown</city>
+			<state>CA</state>
+			<zip>12345</zip>
+			<country>USA</country>
+		</address>
+		<notes>This customer is interested in our premium subscription package.</notes>
+	</customers>
+	<customers>
+		<id>2</id>
+		<name>Jane Smith</name>
+		<email>jane.smith@example.com</email>
+		<phone>+1-555-987-6543</phone>
+		<address>
+			<street>456 Elm St</street>
+			<city>Othertown</city>
+			<state>NY</state>
+			<zip>67890</zip>
+			<country>USA</country>
+		</address>
+		<notes>This customer has a complaint about our service.</notes>
+	</customers>
+	<leads>
+		<id>1</id>
+		<name>Bob Johnson</name>
+		<email>bob.johnson@example.com</email>
+		<phone>+1-555-555-1234</phone>
+		<notes>This lead has expressed interest in our product but has not yet made a purchase.</notes>
+	</leads>
+	<leads>
+		<id>2</id>
+		<name>Alice Brown</name>
+		<email>alice.brown@example.com</email>
+		<phone>+1-555-555-5678</phone>
+		<notes>This lead has submitted a contact form on our website.</notes>
+	</leads>
+	<companies>
+		<id>1</id>
+		<name>Acme Inc.</name>
+		<email>info@acme.com</email>
+		<phone>+1-555-111-2222</phone>
+		<address>
+			<street>789 Oak St</street>
+			<city>Sometown</city>
+			<state>CA</state>
+			<zip>54321</zip>
+			<country>USA</country>
+		</address>
+		<notes>This company is a potential customer.</notes>
+	</companies>
+	<companies>
+		<id>2</id>
+		<name>Beta Corp.</name>
+		<email>info@beta.com</email>
+		<phone>+1-555-333-4444</phone>
+		<address>
+			<street>321 Pine St</street>
+			<city>Anothertown</city>
+			<state>NY</state>
+			<zip>09876</zip>
+			<country>USA</country>
+		</address>
+		<notes>This company is a current customer.</notes>
+	</companies>
+	<opportunities>
+		<id>1</id>
+		<name>Premium Subscription Package</name>
+		<description>A premium package that includes additional features and support.</description>
+		<amount>1000</amount>
+		<probability>0.4</probability>
+		<status>open</status>
+		<customer_id>1</customer_id>
+	</opportunities>
+	<opportunities>
+		<id>2</id>
+		<name>Enterprise Plan</name>
+		<description>A plan for large businesses with custom requirements.</description>
+		<amount>5000</amount>
+		<probability>0.2</probability>
+		<status>won</status>
+		<customer_id>2</customer_id>
+	</opportunities>
+	<activities>
+		<id>1</id>
+		<type>call</type>
+		<subject>Follow-up call with John Doe</subject>
+		<description>Call to discuss the premium subscription package.</description>
+		<start_time>2021-10-01T09:00:00</start_time>
+		<end_time>2021-10-01T09:30:00</end_time>
+		<customer_id>1</customer_id>
+	</activities>
+	<activities>
+		<id>2</id>
+		<type>email</type>
+		<subject>Follow-up email with Jane Smith</subject>
+		<description>Email to address the complaint about our service.</description>
+		<start_time>2021-10-02T10:00:00</start_time>
+		<end_time>2021-10-02T10:15:00</end_time>
+		<customer_id>2</customer_id>
+	</activities>
+</root>
