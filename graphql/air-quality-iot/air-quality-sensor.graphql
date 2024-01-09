@@ -1,0 +1,43 @@
+# Custom scalar type for date and time
+scalar DateTime
+
+type Query {
+  # Query to get a single sensor by its ID
+  getSensor(sensorId: ID!): Sensor
+
+  # Query to get all sensors
+  getAllSensors: [Sensor]
+}
+
+type Sensor {
+  id: ID! # Unique identifier for the sensor
+  name: String # Name of the sensor
+  location: String # Physical location of the sensor
+  sensorData: [SensorData] # List of sensor data entries associated with this sensor
+  lastUpdatedTime: DateTime! # The last time this sensor's data was updated
+}
+
+type SensorData {
+  id: ID! # Unique identifier for the sensor data entry
+  sensorId: ID! # Identifier of the sensor that recorded this data
+  temperature: Float # Temperature reading from the sensor
+  humidity: Float # Humidity reading from the sensor
+  lightIntensity: Float # Light intensity reading from the sensor
+  rainLevel: Float # Rain level reading from the sensor
+  co2Level: Float # CO2 level reading from the sensor
+  aqi: Int # Air Quality Index reading from the sensor
+  particulateMatter25: Float # Particulate matter 2.5 reading from the sensor
+  particulateMatter10: Float # Particulate matter 10 reading from the sensor
+  noiseLevel: Float # Noise level reading from the sensor
+  uvIndex: Float # UV Index reading from the sensor
+  windSpeed: Float # Wind speed reading from the sensor
+  windDirection: String # Wind direction reading from the sensor
+  atmosphericPressure: Float # Atmospheric pressure reading from the sensor
+  timestamp: String # Timestamp of when this data was recorded
+  sensor: Sensor # The sensor that recorded this data
+}
+
+type Mutation {
+  # Mutation to add a new sensor
+  addSensor(name: String, location: String): Sensor
+}
