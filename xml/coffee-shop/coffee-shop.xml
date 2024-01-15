@@ -1,0 +1,185 @@
+<franchise>
+  <id>1</id>
+  <name>Franchise Name</name>
+  <locations>
+    <coffeeShop>
+      <id>1</id>
+      <name>Coffee Shop 1</name>
+      <franchise>
+        <id>1</id>
+      </franchise>
+      <employees>
+        <employee>
+          <id>1</id>
+          <name>Manager 1</name>
+          <job_title>MANAGER</job_title>
+          <salary>50000.0</salary>
+          <work_hours>40</work_hours>
+        </employee>
+        <employee>
+          <id>2</id>
+          <name>Barista 1</name>
+          <job_title>BARISTA</job_title>
+          <salary>30000.0</salary>
+          <work_hours>30</work_hours>
+        </employee>
+        <employee>
+          <id>3</id>
+          <name>Barista 2</name>
+          <job_title>BARISTA</job_title>
+          <salary>30000.0</salary>
+          <work_hours>30</work_hours>
+        </employee>
+        <employee>
+          <id>4</id>
+          <name>Cashier 1</name>
+          <job_title>CASHIER</job_title>
+          <salary>25000.0</salary>
+          <work_hours>25</work_hours>
+        </employee>
+        <employee>
+          <id>5</id>
+          <name>Cashier 2</name>
+          <job_title>CASHIER</job_title>
+          <salary>25000.0</salary>
+          <work_hours>25</work_hours>
+        </employee>
+      </employees>
+      <rent>2000.0</rent>
+      <utilities_cost>500.0</utilities_cost>
+      <tax>100.0</tax>
+      <inventory>
+        <inventoryItem>
+          <id>1</id>
+          <name>Coffee Beans</name>
+          <quantity>100</quantity>
+          <cost>10.0</cost>
+        </inventoryItem>
+        <inventoryItem>
+          <id>2</id>
+          <name>Tea Bags</name>
+          <quantity>50</quantity>
+          <cost>5.0</cost>
+        </inventoryItem>
+        <inventoryItem>
+          <id>3</id>
+          <name>Sugar Packets</name>
+          <quantity>200</quantity>
+          <cost>2.0</cost>
+        </inventoryItem>
+        <inventoryItem>
+          <id>4</id>
+          <name>Milk Cartons</name>
+          <quantity>50</quantity>
+          <cost>3.0</cost>
+        </inventoryItem>
+        <inventoryItem>
+          <id>5</id>
+          <name>Pastry Box</name>
+          <quantity>30</quantity>
+          <cost>15.0</cost>
+        </inventoryItem>
+      </inventory>
+      <orders>
+        <order>
+          <id>1</id>
+          <customer_name>Customer 1</customer_name>
+          <items>
+            <orderItem>
+              <id>1</id>
+              <name>Cappuccino</name>
+              <quantity>2</quantity>
+              <unit_price>5.0</unit_price>
+            </orderItem>
+            <orderItem>
+              <id>2</id>
+              <name>Chocolate Croissant</name>
+              <quantity>1</quantity>
+              <unit_price>3.0</unit_price>
+            </orderItem>
+            <orderItem>
+              <id>3</id>
+              <name>Green Tea</name>
+              <quantity>1</quantity>
+              <unit_price>4.0</unit_price>
+            </orderItem>
+            <orderItem>
+              <id>4</id>
+              <name>Latte</name>
+              <quantity>2</quantity>
+              <unit_price>4.5</unit_price>
+            </orderItem>
+            <orderItem>
+              <id>5</id>
+              <name>Blueberry Muffin</name>
+              <quantity>3</quantity>
+              <unit_price>2.5</unit_price>
+            </orderItem>
+          </items>
+          <total_cost>42.5</total_cost>
+          <status>PENDING</status>
+        </order>
+      </orders>
+      <transactions>
+        <transaction>
+          <id>1</id>
+          <timestamp>2022-01-01T12:00:00Z</timestamp>
+          <payment_method>CREDIT_CARD</payment_method>
+        </transaction>
+        <transaction>
+          <id>2</id>
+          <timestamp>2022-01-02T14:30:00Z</timestamp>
+          <payment_method>DEBIT_CARD</payment_method>
+        </transaction>
+        <transaction>
+          <id>3</id>
+          <timestamp>2022-01-03T10:45:00Z</timestamp>
+          <payment_method>CASH</payment_method>
+        </transaction>
+        <transaction>
+          <id>4</id>
+          <timestamp>2022-01-04T16:20:00Z</timestamp>
+          <payment_method>CREDIT_CARD</payment_method>
+        </transaction>
+        <transaction>
+          <id>5</id>
+          <timestamp>2022-01-05T11:10:00Z</timestamp>
+          <payment_method>DEBIT_CARD</payment_method>
+        </transaction>
+      </transactions>
+      <reviews>
+        <review>
+          <id>1</id>
+          <customer_name>Customer 1</customer_name>
+          <rating>4</rating>
+          <comment>Great coffee!</comment>
+        </review>
+        <review>
+          <id>2</id>
+          <customer_name>Customer 2</customer_name>
+          <rating>5</rating>
+          <comment>Excellent service!</comment>
+        </review>
+        <review>
+          <id>3</id>
+          <customer_name>Customer 3</customer_name>
+          <rating>3</rating>
+          <comment>Could be cleaner</comment>
+        </review>
+        <review>
+          <id>4</id>
+          <customer_name>Customer 4</customer_name>
+          <rating>4</rating>
+          <comment>Love the atmosphere</comment>
+        </review>
+        <review>
+          <id>5</id>
+          <customer_name>
+Customer 5</customer_name>
+<rating>5</rating>
+<comment>Best coffee shop in town!</comment>
+</review>
+</reviews>
+</coffeeShop>
+</locations>
+</franchise>

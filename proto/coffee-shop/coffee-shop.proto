@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+// Define the Franchise message
+message Franchise {
+  int32 id = 1;
+  string name = 2;
+  repeated CoffeeShop locations = 3;
+}
+
+// Define the CoffeeShop message
+message CoffeeShop {
+  int32 id = 1;
+  string name = 2;
+  Franchise franchise = 3;
+  repeated Employee employees = 4;
+  float rent = 5;
+  float utilities_cost = 6;
+  float tax = 7;
+  repeated InventoryItem inventory = 8;
+  repeated Order orders = 9;
+  repeated Transaction transactions = 10;
+  repeated Review reviews = 11;
+}
+
+// Define the Employee message
+message Employee {
+  int32 id = 1;
+  string name = 2;
+  JobTitle job_title = 3;
+  float salary = 4;
+  int32 work_hours = 5;
+  CoffeeShop coffee_shop = 6;
+}
+
+// Define the JobTitle enum
+enum JobTitle {
+  MANAGER = 0;
+  BARISTA = 1;
+  CASHIER = 2;
+}
+
+// Define the InventoryItem message
+message InventoryItem {
+  int32 id = 1;
+  string name = 2;
+  int32 quantity = 3;
+  float cost = 4;
+  CoffeeShop coffee_shop = 5;
+}
+
+// Define the Order message
+message Order {
+  int32 id = 1;
+  string customer_name = 2;
+  repeated OrderItem items = 3;
+  float total_cost = 4;
+  OrderStatus status = 5;
+  CoffeeShop coffee_shop = 6;
+}
+
+// Define the OrderItem message
+message OrderItem {
+  int32 id = 1;
+  string name = 2;
+  int32 quantity = 3;
+  float unit_price = 4;
+  Order order = 5;
+}
+
+// Define the OrderStatus enum
+enum OrderStatus {
+  PENDING = 0;
+  COMPLETED = 1;
+  CANCELLED = 2;
+}
+
+// Define the Transaction message
+message Transaction {
+  int32 id = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  PaymentMethod payment_method = 3;
+  Order order = 4;
+}
+
+// Define the PaymentMethod enum
+enum PaymentMethod {
+  CREDIT_CARD = 0;
+  DEBIT_CARD = 1;
+  CASH = 2;
+}
+
+// Define the Review message
+message Review {
+  int32 id = 1;
+  string customer_name = 2;
+  int32 rating = 3;
+  string comment = 4;
+  CoffeeShop coffee_shop = 5;
+}
