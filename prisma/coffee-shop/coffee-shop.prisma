@@ -1,0 +1,105 @@
+// Define your datasource
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Define your Prisma Client generator
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Define your data models
+model Franchise {
+  id            Int          @id @default(autoincrement())
+  name          String
+  locations    CoffeeShop[]
+}
+
+model CoffeeShop {
+  id            Int          @id @default(autoincrement())
+  name          String
+  franchise     Franchise    @relation(fields: [franchiseId], references: [id])
+  franchiseId   Int
+  employees     Employee[]
+  rent          Float
+  utilitiesCost Float
+  tax           Float
+  inventory     InventoryItem[]
+  orders        Order[]
+  transactions  Transaction[]
+  reviews       Review[]
+}
+
+model Employee {
+  id         Int       @id @default(autoincrement())
+  name       String
+  jobTitle   JobTitle
+  salary     Float
+  workHours  Int
+  coffeeShop CoffeeShop @relation(fields: [coffeeShopId], references: [id])
+  coffeeShopId Int
+}
+
+enum JobTitle {
+  MANAGER
+  BARISTA
+  CASHIER
+}
+
+model InventoryItem {
+  id          Int       @id @default(autoincrement())
+  name        String
+  quantity    Int
+  cost        Float
+  coffeeShop  CoffeeShop @relation(fields: [coffeeShopId], references: [id])
+  coffeeShopId Int
+}
+
+model Order {
+  id          Int         @id @default(autoincrement())
+  customerName String
+  items       OrderItem[]
+  totalCost   Float
+  status      OrderStatus
+  coffeeShop  CoffeeShop @relation(fields: [coffeeShopId], references: [id])
+  coffeeShopId Int
+}
+
+model OrderItem {
+  id        Int       @id @default(autoincrement())
+  name      String
+  quantity  Int
+  unitPrice Float
+  order     Order     @relation(fields: [orderId], references: [id])
+  orderId   Int
+}
+
+enum OrderStatus {
+  PENDING
+  COMPLETED
+  CANCELLED
+}
+
+model Transaction {
+  id           Int       @id @default(autoincrement())
+  timestamp    DateTime  @default(now())
+  paymentMethod PaymentMethod
+  order        Order     @relation(fields: [orderId], references: [id])
+  orderId      Int
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  DEBIT_CARD
+  CASH
+}
+
+model Review {
+  id           Int       @id @default(autoincrement())
+  customerName String
+  rating       Int
+  comment      String?
+  coffeeShop   CoffeeShop @relation(fields: [coffeeShopId], references: [id])
+  coffeeShopId Int
+}

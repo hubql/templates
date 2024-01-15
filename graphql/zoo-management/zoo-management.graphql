@@ -1,0 +1,60 @@
+type Zoo {
+  id: ID!
+  name: String!
+  location: String!
+  capacity: Int!
+  animals: [Animal!]!
+  maintenanceCost: Float!
+  customerSatisfaction: Float!
+}
+
+type Animal {
+  id: ID!
+  name: String!
+  species: Species!
+  age: Int!
+  enclosure: String!
+  diet: Diet!
+}
+
+type Diet {
+  id: ID!
+  name: String!
+  description: String!
+}
+
+type Species {
+  id: ID!
+  name: String!
+  category: String!
+  animalCount: Int!
+}
+
+type Query {
+  zoo(id: ID!): Zoo
+  allZoos: [Zoo!]!
+  animal(id: ID!): Animal
+  allAnimals: [Animal!]!
+  species(id: ID!): Species
+  allSpecies: [Species!]!
+  diet(id: ID!): Diet
+  allDiets: [Diet!]!
+}
+
+type Mutation {
+  createZoo(name: String!, location: String!, capacity: Int!, maintenanceCost: Float, customerSatisfaction: Float): Zoo
+  updateZoo(id: ID!, name: String, location: String, capacity: Int, maintenanceCost: Float, customerSatisfaction: Float): Zoo
+  deleteZoo(id: ID!): ID
+
+  createAnimal(name: String!, speciesId: ID!, age: Int!, enclosure: String!, dietId: ID!): Animal
+  updateAnimal(id: ID!, name: String, speciesId: ID, age: Int, enclosure: String, dietId: ID): Animal
+  deleteAnimal(id: ID!): ID
+
+  createSpecies(name: String!, category: String!, animalCount: Int!): Species
+  updateSpecies(id: ID!, name: String, category: String, animalCount: Int): Species
+  deleteSpecies(id: ID!): ID
+
+  createDiet(name: String!, description: String!): Diet
+  updateDiet(id: ID!, name: String, description: String): Diet
+  deleteDiet(id: ID!): ID
+}

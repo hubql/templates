@@ -1,0 +1,129 @@
+type Franchise {
+  id: ID!
+  name: String!
+  locations: [CoffeeShop!]!
+}
+
+type CoffeeShop {
+  id: ID!
+  name: String!
+  franchise: Franchise!
+  employees: [Employee!]!
+  rent: Float!
+  utilitiesCost: Float!
+  tax: Float!
+  inventory: [InventoryItem!]!
+  orders: [Order!]!
+  transactions: [Transaction!]!
+  reviews: [Review!]!
+}
+
+type Employee {
+  id: ID!
+  name: String!
+  jobTitle: JobTitle!
+  salary: Float!
+  workHours: Int!
+}
+
+enum JobTitle {
+  MANAGER
+  BARISTA
+  CASHIER
+}
+
+type InventoryItem {
+  id: ID!
+  name: String!
+  quantity: Int!
+  cost: Float!
+}
+
+type Order {
+  id: ID!
+  customerName: String!
+  items: [OrderItem!]!
+  totalCost: Float!
+  status: OrderStatus!
+}
+
+type OrderItem {
+  id: ID!
+  name: String!
+  quantity: Int!
+  unitPrice: Float!
+}
+
+enum OrderStatus {
+  PENDING
+  COMPLETED
+  CANCELLED
+}
+
+type Transaction {
+  id: ID!
+  order: Order!
+  timestamp: String!
+  paymentMethod: PaymentMethod!
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  DEBIT_CARD
+  CASH
+}
+
+type Review {
+  id: ID!
+  customerName: String!
+  rating: Int!
+  comment: String
+}
+
+type Query {
+  franchise(id: ID!): Franchise
+  allFranchises: [Franchise!]!
+  coffeeShop(id: ID!): CoffeeShop
+  allCoffeeShops: [CoffeeShop!]!
+  employee(id: ID!): Employee
+  allEmployees: [Employee!]!
+  inventoryItem(id: ID!): InventoryItem
+  allInventoryItems: [InventoryItem!]!
+  order(id: ID!): Order
+  allOrders: [Order!]!
+  transaction(id: ID!): Transaction
+  allTransactions: [Transaction!]!
+  review(id: ID!): Review
+  allReviews: [Review!]!
+}
+
+type Mutation {
+  createFranchise(name: String!): Franchise
+  updateFranchise(id: ID!, name: String): Franchise
+  deleteFranchise(id: ID!): ID
+
+  createCoffeeShop(franchiseId: ID!, name: String!, rent: Float!, utilitiesCost: Float!, tax: Float!): CoffeeShop
+  updateCoffeeShop(id: ID!, name: String, rent: Float, utilitiesCost: Float, tax: Float): CoffeeShop
+  deleteCoffeeShop(id: ID!): ID
+
+  createEmployee(coffeeShopId: ID!, name: String!, jobTitle: JobTitle!, salary: Float!, workHours: Int!): Employee
+  updateEmployee(id: ID!, name: String, jobTitle: JobTitle, salary: Float, workHours: Int): Employee
+  deleteEmployee(id: ID!): ID
+
+  createInventoryItem(coffeeShopId: ID!, name: String!, quantity: Int!, cost: Float!): InventoryItem
+  updateInventoryItem(id: ID!, name: String, quantity: Int, cost: Float): InventoryItem
+  deleteInventoryItem(id: ID!): ID
+
+  createOrder(coffeeShopId: ID!, customerName: String!, items: [OrderItemInput!]!): Order
+  updateOrder(id: ID!, status: OrderStatus): Order
+  cancelOrder(id: ID!): ID
+
+  createTransaction(orderId: ID!, paymentMethod: PaymentMethod!): Transaction
+  createReview(coffeeShopId: ID!, customerName: String!, rating: Int!, comment: String): Review
+}
+
+input OrderItemInput {
+  name: String!
+  quantity: Int!
+  unitPrice: Float!
+}
