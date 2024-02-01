@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <Hotel>
+    <hotelName>Luxury Grand Hotel</hotelName>
+    <executiveCommittee>
+      <member>
+        <position>General Manager</position>
+        <name>John Smith</name>
+        <department>Executive Office</department>
+      </member>
+    </executiveCommittee>
+    <departmentHeads>
+      <head>
+        <position>Front Office Manager</position>
+        <name>Sophie Turner</name>
+        <department>Front Office</department>
+      </head>
+    </departmentHeads>
+    <lineStaff>
+      <staff>
+        <position>Front Desk Agent</position>
+        <name>Jessica Martinez</name>
+        <department>Front Office</department>
+      </staff>
+    </lineStaff>
+  </Hotel>
+</root>

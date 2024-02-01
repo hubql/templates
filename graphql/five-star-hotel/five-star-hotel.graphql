@@ -1,0 +1,24 @@
+type Hotel {
+  hotelName: String
+  executiveCommittee: [ExecutiveCommitteeMember]
+  departmentHeads: [DepartmentHead]
+  lineStaff: [LineStaff]
+}
+
+type ExecutiveCommitteeMember {
+  position: String
+  name: String
+  department: String
+}
+
+type DepartmentHead {
+  position: String
+  name: String
+  department: String
+}
+
+type LineStaff {
+  position: String
+  name: String
+  department: String
+}
