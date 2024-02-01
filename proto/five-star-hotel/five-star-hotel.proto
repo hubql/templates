@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message Hotel {
+  string hotel_name = 1;
+  repeated ExecutiveCommitteeMember executive_committee = 2;
+  repeated DepartmentHead department_heads = 3;
+  repeated LineStaff line_staff = 4;
+}
+
+message ExecutiveCommitteeMember {
+  string position = 1;
+  string name = 2;
+  string department = 3;
+}
+
+message DepartmentHead {
+  string position = 1;
+  string name = 2;
+  string department = 3;
+}
+
+message LineStaff {
+  string position = 1;
+  string name = 2;
+  string department = 3;
+}
