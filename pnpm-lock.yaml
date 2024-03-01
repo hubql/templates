@@ -1,0 +1,17 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  hubql:
+    specifier: ^0.0.5
+    version: 0.0.5
+
+packages:
+
+  /hubql@0.0.5:
+    resolution: {integrity: sha512-TQL+guxPcsP//YlPVwZq6Zmk9VFQ7P2KzoGZocTdINNHemklLRX0objTAHuJwP8K2eAo3LhJtglj/C5pVr0/uQ==}
+    hasBin: true
+    dev: false
